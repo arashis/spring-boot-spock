@@ -1,0 +1,11 @@
+# add book
+curl -X POST -H "Content-Type: application/json" -H "User-Name: asan" -d '{"title": "my title","description": "my description"}' localhost:8080/book/
+
+# put book
+curl -X PUT -H "Content-Type: application/json" -H "User-Name: bsan" -d '{"title":"kimetsu2", "description":"kimetsu2"}' localhost:8080/book/1
+
+# select all books
+curl localhost:8080/book
+
+# select one book by id
+curl localhost:8080/book/1
