@@ -1,5 +1,5 @@
 # spring-boot-spock
-This project is spock test method for spring boot.
+This project is spock test for spring boot.
 
 ## how to use
 If you are using intellij idea, clone this project and open this by intellij. That way, automatically, set up.
