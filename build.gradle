@@ -29,8 +29,8 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
     runtimeOnly 'mysql:mysql-connector-java'
 
-    compileOnly 'org.projectlombok:lombok:1.18.10'
-    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+    compileOnly 'org.projectlombok:lombok:1.18.+'
+    annotationProcessor 'org.projectlombok:lombok:1.18.+'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
@@ -43,3 +43,18 @@ test {
     useJUnitPlatform()
 }
 
+// ./gradlew dependencies --update-locks '*:*'を実行することでライブラリバージョンで+と書かれたことろがアップデートされロックされる
+configurations {
+    compileClasspath {
+        resolutionStrategy.activateDependencyLocking()
+    }
+    runtimeClasspath {
+        resolutionStrategy.activateDependencyLocking()
+    }
+    testCompileClasspath {
+        resolutionStrategy.activateDependencyLocking()
+    }
+    testRuntimeClasspath {
+        resolutionStrategy.activateDependencyLocking()
+    }
+}
